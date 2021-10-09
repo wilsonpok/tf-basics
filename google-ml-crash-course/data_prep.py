@@ -3,11 +3,11 @@
 import numpy as np
 import pandas as pd
 import math
-
 import tensorflow.compat.v1 as tf
+from matplotlib import pyplot as plt
+
 tf.disable_v2_behavior()
 
-from matplotlib import pyplot as plt
 
 # Set pandas output display to have one digit for decimal places and limit it to
 # printing 15 rows.
@@ -42,7 +42,10 @@ print(car_data[4:7])
 
 LABEL = 'price'
 
-numeric_feature_names = ['symboling','normalized-losses','wheel-base','engine-size','bore','stroke','compression-ratio','horsepower','peak-rpm','city-mpg','highway-mpg','length','height','width','weight']
+numeric_feature_names = ['symboling','normalized-losses','wheel-base',
+'engine-size','bore','stroke','compression-ratio','horsepower','peak-rpm',
+'city-mpg','highway-mpg','length','height','width','weight']
+
 categorical_feature_names = list(set(feature_names) - set(numeric_feature_names) - set([LABEL]))
 
 # The correct solution will pass these assert statements.
